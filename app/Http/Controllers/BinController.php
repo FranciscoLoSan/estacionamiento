@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\bin;
+use App\Models\Bin;
 use Illuminate\Http\Request;
 
 class BinController extends Controller
