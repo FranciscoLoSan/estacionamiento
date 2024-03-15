@@ -64,7 +64,13 @@
                     </div>
                     <div class="mb-3 col-6">    
                         <label for="total_pago" class="form-label">Total</label>
-                        <input type="number" class="form-control text-center" id="total_pago" name="total_pago" value="" readonly/>
+                        <input type="number" class="form-control text-center" id="total_pago" name="pagar" value="" readonly/>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="pago" class="form-label">Pago</label>
+                    <div class="mb-3 col-12">
+                        <input type="number" class="form-control text-center" id="pago" name="pago" value=""/>
                     </div>
                 </div>
                     

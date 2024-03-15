@@ -15,7 +15,8 @@ class Bin extends Model
         'fecha_entrada',
         'hora_salida',
         'fecha_salida',
-        'total_pago',
-        'estado'
+        'pagar',
+        'estado',
+        'pago'
     ];
 }

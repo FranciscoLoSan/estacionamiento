@@ -1,7 +1,8 @@
 @extends('layouts.base')
 @section('title', 'Estacionamiento')
 
-@section('content')<table class="table table-striped">
+@section('content')
+    <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Cajón</th>
@@ -32,8 +33,8 @@
                         @endif
                     </td>
                     <td>
-                        @if( isset($bin->total_pago))
-                            ${{ $bin->total_pago }} 
+                        @if( isset($bin->pago))
+                            ${{ $bin->pago }} 
                         @else 
                             $---.-- 
                         @endif

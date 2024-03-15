@@ -55,15 +55,36 @@
                     </div>
                     <div class="mb-3 col-6">    
                         <label for="total_pago" class="form-label">Total</label>
-                        <input type="number" class="form-control text-center" id="total_pago" name="total_pago" value="{{ $bin->total_pago}}" readonly/>
+                        <input type="number" class="form-control text-center" id="total_pago" name="total_pago" value="{{ $bin->pagar}}" readonly/>
                     </div>
                 </div>
                     
                 <div class="mb-3 col-6"> 
                     <input type="number" class="form-control text-center d-none" id="estado" name="estado" value="1" readonly/>
                 </div>
+                <div class="mb-3 col-12">
+                    <label for="hora_salida" class="form-label">Cambio de {{$bin->pago}}</label>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Moneda</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($apariciones as $elemento  => $apariciones)
+                                <tr>
+                                    <th scope="row">{{ $elemento }}</th>
+                                    <td>
+                                    {{$apariciones}}
+                                    </td>
+                            @endforeach
+        
+                        </tbody>
+                    </table>
+                </div>
             @endif  
-        </form>
+            </form>
         <div class="card-footer text-muted m-2">
         </div>
     </div>

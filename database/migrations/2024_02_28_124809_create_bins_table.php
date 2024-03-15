@@ -20,7 +20,8 @@ return new class extends Migration
             $table->date('fecha_entrada');
             $table->time('hora_salida')->nullable();
             $table->date('fecha_salida')->nullable();
-            $table->decimal('total_pago', 5, 2)->nullable();
+            $table->decimal('pagar', 5, 2)->nullable();
+            $table->decimal('pago', 5, 2)->nullable();
             $table->integer('estado')->default(1);
             $table->timestamps();
         });

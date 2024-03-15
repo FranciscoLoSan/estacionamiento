@@ -44,7 +44,32 @@ class BinController extends Controller
     {
         
         $bin = Bin::findOrFail($id);
-        return view('bins.show', compact('bin')); 
+        $pago = $bin->pago - $bin->pagar;
+        $cambio = array(100, 50, 20, 10, 5, 2, 1);
+        $vuelto = array();
+        $j = 0;
+        $vecesMoneda = 0;
+        for($i = 0; $i < count($cambio); $i++){
+            if ($cambio[$i] <= $pago){
+                $vuelto[$j] = [
+                    $cambio[$i],
+                ];
+                $pago = $pago - $cambio[$i]; 
+                $i--;
+                $j++;
+            }
+        }
+        $apariciones = [];
+        foreach ($vuelto as $subarreglo) {
+            $elemento = $subarreglo[0];
+            if (isset($apariciones[$elemento])) {
+                $apariciones[$elemento]++;
+            } else {
+                $apariciones[$elemento] = 1;
+            }
+        }
+        // dd($cambio[0], $vuelto,$bin->pagar, $pago, $apariciones);
+        return view('bins.show', compact('bin', 'apariciones')); 
     }
 
     /**
